@@ -90,7 +90,6 @@ public class ClockView extends View {
         mBoder_color = typedArray.getColor(R.styleable.ClockView_borderColor_wzy, Color.BLACK);
         /*--------------------------------------------------------------------------*/
         setTime();
-
     }
 
 
@@ -116,11 +115,7 @@ public class ClockView extends View {
         textPaint.setStrokeWidth(2);
         textPaint.setColor(Color.BLACK);
         for (int i = 0; i < 12; i++) {
-            if (i == 0) {
-                drawNumer(canvas, i * 30, "12", textPaint, r);
-            } else {
-                drawNumer(canvas, i * 30, "" + i, textPaint, r);
-            }
+                drawNumer(canvas, i * 30,i==0?""+12:""+i, textPaint, r);
         }
         canvas.restore();
         canvas.drawPoint(getWidth() / 2, getHeight() / 2, textPaint);
